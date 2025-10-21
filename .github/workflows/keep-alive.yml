@@ -1,0 +1,15 @@
+name: Supabase Keep-Alive Ping
+
+on:
+  schedule:
+    # This runs the workflow every day at 8:00 AM UTC.
+    # You can change the time. Use a site like crontab.guru to help.
+    - cron: '0 8 * * *'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase URL to keep it alive
+        # Replace the URL with your actual Supabase project URL
+        run: curl -s -X HEAD "https://njhroscmwtskxtasotkf.supabase.co"
